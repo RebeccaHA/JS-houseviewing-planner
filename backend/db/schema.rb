@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_221610) do
 
   create_table "houses", force: :cascade do |t|
     t.string "name"
-    t.integer "house_coordinates"
+    t.string "house_coordinates"
     t.string "house_information"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_221610) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "home_coordinates"
+    t.string "home_coordinates"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

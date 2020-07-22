@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create(name: "Ben", home_coordinates: 2222.3,4444)
+User.create(name: "Brain")
+User.create(name: "Borris")
+User.create(name: "Bill")
+User.create(name: "Brice")
+User.create(name: "Bob")
+
+House.create()
