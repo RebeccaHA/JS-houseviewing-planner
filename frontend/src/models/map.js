@@ -7,31 +7,28 @@ function initMap() {
 
   const map = new google.maps.Map(document.getElementById("map"), options);
 
-  function addMarker(coords) {
+  addMarker({ lat: 51.5032, lng: -0.1123 }, "<h1>Hello</h1>");
+
+  function addMarker(coords, content) {
     let marker = new google.maps.Marker({
       position: coords,
       map: map
     });
+
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    marker.addListener("click", function() {
+      infoWindow.open(map, marker);
+    });
   }
-  addHome({ lat: 51.5032, lng: -0.1123 });
+
   function addHome(coords) {
     let marker = new google.maps.Marker({
       position: coords,
       map: map,
-      icon: "frontend/src/images/home.png"
+      icon: "https://icons8.com/icon/E70fsabn6Rl1/home-address"
     });
   }
-
-  //   let marker = new google.maps.Marker({
-  //     position: { lat: 51.5032, lng: -0.1123 },
-  //     map: map
-  //   });
-
-  //   let infoWindow = new google.maps.InfoWindow({
-  //     content: "<h1>This info</h1>"
-  //   });
-
-  //   marker.addListener("click", function() {
-  //     infoWindow.open(map, marker);
-  //   });
 }
