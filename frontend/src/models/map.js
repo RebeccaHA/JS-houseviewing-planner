@@ -7,7 +7,10 @@ function initMap() {
 
   const map = new google.maps.Map(document.getElementById("map"), options);
 
-  addMarker({ lat: 51.5032, lng: -0.1123 }, "<h1>Hello</h1>");
+  addMarker(
+    { lat: 51.5032, lng: -0.1123 },
+    "<h1>Hello</h1><p>You view this at this time</p>"
+  );
 
   function addMarker(coords, content) {
     let marker = new google.maps.Marker({

@@ -16,21 +16,43 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
-    <script
-      type="application/javascript"
-      src="src/models/map.js"
-      charset="UTF-8"
-    ></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA05LxqMIAvnlXyl3wjnQNd3PeUPcP1DcE&callback=initMap"
-    ></script>
-    <script
-      type="application/javascript"
-      src="src/index.js"
-      charset="UTF-8"
-    ></script>
+    <div class="container">
+      <h1>House Viewing Mapper</h1>
+      <form id="user-form" class="form">
+        <h2>Register A User</h2>
+        <div class="form-control">
+          <label for="username">Username</label>
+          <input type="text" id="name" placeholder="Enter Name" />
+          <input type="text" id="home" placeholder="Add home coordinates" />
+        </div>
+      </form>
+
+      <div class="user-list">
+        <label>Select User</label>
+        <select id="user">
+          <option value="1">Ben</option>
+          <option value="2">James</option>
+          <option value="3">Anna</option>
+          <option value="4">Jo</option>
+        </select>
+      </div>
+
+      <div id="map"></div>
+      <script
+        type="application/javascript"
+        src="src/models/map.js"
+        charset="UTF-8"
+      ></script>
+      <script
+        async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA05LxqMIAvnlXyl3wjnQNd3PeUPcP1DcE&callback=initMap"
+      ></script>
+      <script
+        type="application/javascript"
+        src="src/index.js"
+        charset="UTF-8"
+      ></script>
+    </div>
   </body>
 </html>
