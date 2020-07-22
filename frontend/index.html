@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="utf-8" />
+    <title>Houseviewing Planner</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      #map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-   Sample text - replace me! 
+    <div id="map"></div>
+    <script
+      type="application/javascript"
+      src="src/models/map.js"
+      charset="UTF-8"
+    ></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA05LxqMIAvnlXyl3wjnQNd3PeUPcP1DcE&callback=initMap"
+    ></script>
+    <script
+      type="application/javascript"
+      src="src/index.js"
+      charset="UTF-8"
+    ></script>
   </body>
-  <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
 </html>
