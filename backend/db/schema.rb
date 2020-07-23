@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2020_07_22_221610) do
   create_table "houses", force: :cascade do |t|
     t.string "name"
     t.string "house_coordinates"
+    t.string "viewing_time"
+    t.string "viewing_date"
     t.string "house_information"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
