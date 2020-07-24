@@ -1,6 +1,6 @@
 class googleMap {
   static getMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
+    const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 13,
       center: { lat: 51.5032, lng: -0.1123 }
     });
