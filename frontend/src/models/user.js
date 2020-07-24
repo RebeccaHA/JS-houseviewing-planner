@@ -27,6 +27,4 @@ class User {
     option.text = newUser.name;
     userDropdown.appendChild(option);
   }
-
-  this.createNewUser()
 }
