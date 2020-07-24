@@ -10,5 +10,14 @@ class API {
     });
   }
 
-  static post(url, data) {}
+  static post(url, data) {
+    return fetch(this.baseURL + url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }).then(response => response.json());
+  }
 }
