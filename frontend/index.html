@@ -11,44 +11,51 @@
   </head>
   <body>
     <div class="container">
-      <h1>House Viewing Mapper</h1>
-      <form id="user-form" class="form">
-        <h2>Register A User</h2>
-        <div class="form-control">
-          <label for="username">Username</label>
-          <input type="text" id="name" placeholder="Enter Name" />
-          <input
-            type="integer"
-            id="home_longitude"
-            placeholder="Add home longitude"
-          />
-          <input
-            type="integer"
-            id="home_latitude"
-            placeholder="Add home latitude"
-          />
-          <button id="create-user">Submit</button>
-        </div>
-      </form>
-
-      <div class="user-list">
-        <label>Select User</label>
-        <select id="user-dropdown"> </select>
+      <div class="row">
+        <h1>House Viewing Mapper</h1>
+        <form id="user-form" class="form">
+          <h2>Register A User</h2>
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" id="name" placeholder="Enter Name" />
+            <input
+              type="integer"
+              id="home_longitude"
+              placeholder="Add home longitude"
+            />
+            <input
+              type="integer"
+              id="home_latitude"
+              placeholder="Add home latitude"
+            />
+            <button id="create-user">Submit</button>
+          </div>
+        </form>
       </div>
-
-      <div id="map"></div>
-      <form id="house-form" class="form">
-        <h2>Add a viewing</h2>
-        <div class="form-control">
-          <label for="name">name</label>
-          <input type="text" id="name" placeholder="Enter Name" />
-          <input type="text" id="house" placeholder="Add house coordinates" />
-          <textarea
-            id="notes"
-            placeholder="Add house cost, viewing time, and property notes"
-          ></textarea>
+      <div class="row">
+        <div class="user-list">
+          <label>Select User</label>
+          <select id="user-dropdown"> </select>
         </div>
-      </form>
+      </div>
+      <div class="row">
+        <div id="map"></div>
+      </div>
+      <div class="row">
+        <form id="house-form" class="form">
+          <h2>Add a viewing</h2>
+          <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter Name" /><br />
+            <input type="text" id="house" placeholder="Add house coordinates" />
+            <br />
+            <textarea
+              id="notes"
+              placeholder="Add house cost, viewing time, and property notes"
+            ></textarea>
+          </div>
+        </form>
+      </div>
       <script
         type="application/javascript"
         src="src/services/api.js"
