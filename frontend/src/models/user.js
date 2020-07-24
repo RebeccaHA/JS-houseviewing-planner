@@ -57,9 +57,15 @@ class User {
 
   static retrieveUser(userId) {
     API.get(`/users/${userId}`).then(user => {
-      user.showUserPins();
+      let userHouses = user.houses;
+
+      User.showUserPins(user, userHouses);
     });
   }
 
-  showUserPins() {}
+  static showUserPins(user, houses) {
+    houses.forEach(house => {
+      Map.addMarker(house);
+    });
+  }
 }

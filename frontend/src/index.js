@@ -6,7 +6,7 @@ const userSelect = document.getElementById("user-dropdown");
 userSelect.addEventListener("change", e => {
   let userId = e.target.value;
 
-  User.retrieveUserPins(userId);
+  User.retrieveUser(userId);
 });
 userForm.addEventListener("submit", e => {
   e.preventDefault();
