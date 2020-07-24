@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         user = User.new(user_params)
 
         if user.save
-            render json: user, only: [:name, :home_longitude, :home_latitude]
+            render json: user, only: [:id, :name, :home_longitude, :home_latitude]
         else
             render json: user.errors
         end

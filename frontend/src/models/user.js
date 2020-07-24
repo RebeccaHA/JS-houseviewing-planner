@@ -54,4 +54,12 @@ class User {
       addedUser.renderUser();
     });
   }
+
+  static retrieveUser(userId) {
+    API.get(`/users/${userId}`).then(user => {
+      user.showUserPins();
+    });
+  }
+
+  showUserPins() {}
 }
