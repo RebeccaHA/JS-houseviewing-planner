@@ -9,4 +9,6 @@ class API {
       return response.json();
     });
   }
+
+  static post(url, data) {}
 }
