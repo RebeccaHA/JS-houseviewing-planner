@@ -45,7 +45,13 @@ class User {
     };
 
     API.post("/users", user).then(data => {
-      console.log(data);
+      let addedUser = new User(
+        data.id,
+        data.name,
+        data.home_longitude,
+        data.home_latitude
+      );
+      addedUser.renderUser();
     });
   }
 }
