@@ -1,4 +1,5 @@
 User.getAllUsers();
+googleMap.getMap();
 
 const userForm = document.getElementById("user-form");
 const userSelect = document.getElementById("user-dropdown");

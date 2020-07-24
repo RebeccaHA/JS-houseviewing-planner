@@ -1,18 +1,18 @@
-function initMap() {
-  const london = { lat: 51.5032, lng: -0.1123 };
-  const options = {
-    zoom: 13,
-    center: london
-  };
-
-  const map = new google.maps.Map(document.getElementById("map"), options);
+class googleMap {
+  static getMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 13,
+      center: { lat: 51.5032, lng: -0.1123 }
+    });
+    return map;
+  }
 
   // addMarker(
   //   { lat: 51.5032, lng: -0.1123 },
   //   "<h1>Hello</h1><p>You view this at this time</p>"
   // );
 
-  function addMarker(coords, content) {
+  addMarker(coords, content) {
     let marker = new google.maps.Marker({
       position: coords,
       map: map
@@ -27,7 +27,7 @@ function initMap() {
     });
   }
 
-  function addHome(coords) {
+  addHome(coords) {
     let marker = new google.maps.Marker({
       position: coords,
       map: map,
