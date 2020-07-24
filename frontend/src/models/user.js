@@ -1,8 +1,9 @@
 class User {
-  constructor(id, name, home_coordinates) {
+  constructor(id, name, home_longitude, home_latitude) {
     (this.id = id),
       (this.name = name),
-      (this.home_coordinates = home_coordinates);
+      (this.home_longitude = home_longitude),
+      (this.home_latitude = home_latitude);
   }
 
   static getAllUsers() {
@@ -14,7 +15,12 @@ class User {
 
   static createUserObject(users) {
     users.forEach(user => {
-      let newUser = new User(user.id, user.name, user.home_coordinates);
+      let newUser = new User(
+        user.id,
+        user.name,
+        user.home_longitude,
+        user.home_latitude
+      );
       console.log(newUser);
       newUser.renderUser();
     });
@@ -28,9 +34,18 @@ class User {
     userDropdown.appendChild(option);
   }
 
-  createUser(params) {
+  static createUser() {
     const name = document.getElementById("name").value;
-    const home = document.getElementById("home").value;
-    API.post("/users", params).then(data => {});
+    const longitude = document.getElementById("home_longitude").value;
+    const latitude = document.getElementById("home_latitude").value;
+    let user = {
+      name: name,
+      home_longitude: longitude,
+      home_latitude: latitude
+    };
+
+    API.post("/users", user).then(data => {
+      console.log(data);
+    });
   }
 }

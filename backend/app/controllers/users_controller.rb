@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def index
         users = User.all
-        render json: users, only: [:id, :name, :home_coordinates]
+        render json: users, only: [:id, :name, :home_longitude, :home_latitude]
     end
 
     def show
@@ -12,6 +12,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.create(params)
+        user = User.new(user_params)
+
+        if user.save
+            render json: user, only: [:name, :home_longitude, :home_latitude]
+        else
+            render json: user.errors
+        end
+    end
+
+    def user_params
+        params.require(:user).permit(:name, :home_longitude, :home_latitude)
     end
 end
