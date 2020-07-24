@@ -8,23 +8,29 @@ class User {
   static getAllUsers() {
     API.get("/users").then(users => {
       console.log(users);
-      User.createUsers(users);
+      User.createUserObject(users);
     });
   }
 
-  static createUsers(users) {
+  static createUserObject(users) {
     users.forEach(user => {
       let newUser = new User(user.id, user.name, user.home_coordinates);
       console.log(newUser);
-      User.renderUser(newUser);
+      newUser.renderUser();
     });
   }
 
-  static renderUser(newUser) {
+  renderUser() {
     const userDropdown = document.getElementById("user-dropdown");
     const option = document.createElement("option");
-    option.value = newUser.id;
-    option.text = newUser.name;
+    option.value = this.id;
+    option.text = this.name;
     userDropdown.appendChild(option);
+  }
+
+  createUser(params) {
+    const name = document.getElementById("name").value;
+    const home = document.getElementById("home").value;
+    API.post("/users", params).then(data => {});
   }
 }
