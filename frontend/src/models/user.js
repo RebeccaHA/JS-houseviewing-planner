@@ -65,9 +65,10 @@ class User {
 
   static showUserPins(user, houses) {
     houses.forEach(house => {
+      console.log(house);
       //user.home long and lat turn into string and pass into googleMap.addHome
       //need to turn coordinates into key value page to pass in add marker method
-      googleMap.addMarker(house);
+      addMarker(house);
     });
   }
 }

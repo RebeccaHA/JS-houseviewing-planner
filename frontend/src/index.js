@@ -15,12 +15,13 @@ userForm.addEventListener("submit", e => {
   User.createUser();
 });
 
-const map = new google.maps.Map(document.getElementById("map"), {
-  zoom: 13,
-  center: { lat: 51.5032, lng: -0.1123 }
-});
+let map;
 
 function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: { lat: 51.5032, lng: -0.1123 }
+  });
   return map;
 }
 
