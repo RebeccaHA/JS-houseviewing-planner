@@ -7,11 +7,6 @@ class googleMap {
     return map;
   }
 
-  // addMarker(
-  //   { lat: 51.5032, lng: -0.1123 },
-  //   "<h1>Hello</h1><p>You view this at this time</p>"
-  // );
-
   addMarker(coords, content) {
     let marker = new google.maps.Marker({
       position: coords,
@@ -31,7 +26,14 @@ class googleMap {
     let marker = new google.maps.Marker({
       position: coords,
       map: map,
-      icon: "https://icons8.com/icon/E70fsabn6Rl1/home-address"
+      icon: "images/home.png"
+    });
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    marker.addListener("click", function() {
+      infoWindow.open(map, marker);
     });
   }
 }
