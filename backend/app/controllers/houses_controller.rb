@@ -1,4 +1,11 @@
 class HousesController < ApplicationController
+   def index
+      houses = House.all
+
+      render json: houses
+   end
+   
+   
    def create
       house = House.new(house_params)
       
@@ -9,6 +16,8 @@ class HousesController < ApplicationController
          render json: house.errors
       end
    end
+
+
 
    def house_params
       params.require(:house).permit(:name, :lat, :lng, :viewing_time, :viewing_date, :house_information, :user_id)
