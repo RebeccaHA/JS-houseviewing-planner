@@ -43,11 +43,10 @@ function addMarker(coords, content) {
 }
 
 function addHome(coords) {
+  debugger;
   let marker = new google.maps.Marker({
     position: coords,
-    map: map,
-    icon: "images/home.png"
+    map: map
+    // icon: "src/images/home.png"
   });
 }
-
-addMarker({ lat: 51.5032, lng: -0.1123 }, "<h1>HELLO</h1>");

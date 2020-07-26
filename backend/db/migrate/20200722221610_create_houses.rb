@@ -2,7 +2,8 @@ class CreateHouses < ActiveRecord::Migration[6.0]
   def change
     create_table :houses do |t|
       t.string :name
-      t.string :house_coordinates
+      t.float :lat
+      t.float :lng
       t.string :viewing_time
       t.string :viewing_date
       t.string :house_information

@@ -58,17 +58,27 @@ class User {
   static retrieveUser(userId) {
     API.get(`/users/${userId}`).then(user => {
       let userHouses = user.houses;
-
+      console.log(user);
       User.showUserPins(user, userHouses);
     });
   }
 
   static showUserPins(user, houses) {
+    let userHome = {
+      lat: user.home_latitude,
+      lng: user.home_longitude
+    };
+    addHome(userHome);
+
     houses.forEach(house => {
-      console.log(house);
-      //user.home long and lat turn into string and pass into googleMap.addHome
-      //need to turn coordinates into key value page to pass in add marker method
-      addMarker(house);
+      let coords = {
+        lat: house.lat,
+        lng: house.lng
+      };
+      let content = `<h1>${house.name}</h1> <p>${house.viewing_date} <br> ${house.viewing_time}</p>`;
+      console.log(coords, content);
+
+      addMarker(coords, content);
     });
   }
 }

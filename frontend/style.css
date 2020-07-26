@@ -31,3 +31,7 @@ input {
 form {
   padding: 30px 40px;
 }
+
+p {
+  color: black;
+}
