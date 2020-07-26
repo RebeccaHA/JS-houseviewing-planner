@@ -4,16 +4,24 @@ User.getAllUsers();
 
 const userForm = document.getElementById("user-form");
 const userSelect = document.getElementById("user-dropdown");
+const addHouseButton = document.getElementById("add-viewing");
 
 userSelect.addEventListener("change", e => {
   let userId = e.target.value;
-
   User.retrieveUser(userId);
 });
+
 userForm.addEventListener("submit", e => {
   e.preventDefault();
   User.createUser();
   clearForm();
+});
+
+addHouseButton.addEventListener("click", e => {
+  console.log(e.target);
+  debugger;
+  e.preventDefault();
+  House.addViewing();
 });
 
 function clearForm() {

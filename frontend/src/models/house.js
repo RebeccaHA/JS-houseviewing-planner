@@ -27,6 +27,7 @@ class House {
     const viewing_date = document.getElementById("viewing-time").value;
     const house_information = document.getElementById("house-information");
     const user_id = document.getElementById("option").value;
+
     let house = {
       name: house - name,
       lng: longitude,
@@ -36,6 +37,7 @@ class House {
       house_information: house_information,
       user_id: user_id
     };
+    debugger;
 
     API.post("/houses", house).then(data => {
       let newHouse = new House(
