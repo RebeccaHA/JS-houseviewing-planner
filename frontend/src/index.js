@@ -19,7 +19,7 @@ let map;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
+    zoom: 11,
     center: { lat: 51.5032, lng: -0.1123 }
   });
   return map;
@@ -43,10 +43,9 @@ function addMarker(coords, content) {
 }
 
 function addHome(coords) {
-  debugger;
   let marker = new google.maps.Marker({
     position: coords,
-    map: map
-    // icon: "src/images/home.png"
+    map: map,
+    icon: "src/images/home.png"
   });
 }
