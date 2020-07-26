@@ -6,7 +6,8 @@ class House {
     lat,
     viewing_time,
     viewing_date,
-    house_information
+    house_information,
+    user_id
   ) {
     (this.id = id),
       (this.name = name),
@@ -14,7 +15,8 @@ class House {
       (this.lat = lat),
       (this.viewing_time = viewing_time),
       (this.viewing_date = viewing_date),
-      (this.house_information = house_information);
+      (this.house_information = house_information),
+      (this.user_id = user_id);
   }
 
   static addViewing() {
@@ -31,7 +33,8 @@ class House {
       lat: latitude,
       viewing_time: viewing_time,
       viewing_date: viewing_date,
-      house_information: house_information
+      house_information: house_information,
+      user_id: user_id
     };
 
     API.post("/houses", house).then(data => {
@@ -45,10 +48,14 @@ class House {
         data.house_information
       );
 
-      let coords{
-          
-      }
-      newHouse.addMarker(newHouse, content);
+      let coords = {
+        lat: newHouse.lat,
+        lng: newHouse.lng
+      };
+
+      let content = `<h1>${newHouse.name}</h1> <p>${newHouse.viewing_date} <br> ${newHouse.viewing_time}<br> ${newHouse.house_information}</p>`;
+
+      newHouse.addMarker(coords, content);
     });
   }
 }
