@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
    def create
       house = House.new(house_params)
-      user = User.find_by(id: params[:id])
+      
 
       if house.save
          render json: house, include: [:user]

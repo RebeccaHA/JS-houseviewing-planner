@@ -18,10 +18,9 @@ userForm.addEventListener("submit", e => {
 });
 
 addHouseButton.addEventListener("click", e => {
-  console.log(e.target);
-  debugger;
   e.preventDefault();
   House.addViewing();
+  clearForm();
 });
 
 function clearForm() {

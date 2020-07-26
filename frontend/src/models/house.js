@@ -25,11 +25,13 @@ class House {
     const latitude = document.getElementById("lat").value;
     const viewing_time = document.getElementById("viewing-date").value;
     const viewing_date = document.getElementById("viewing-time").value;
-    const house_information = document.getElementById("house-information");
-    const user_id = document.getElementById("option").value;
+    const house_information = document.getElementById("house-information")
+      .value;
+    const user = document.getElementById("user-dropdown");
+    const user_id = user.options[user.selectedIndex].value;
 
     let house = {
-      name: house - name,
+      name: name,
       lng: longitude,
       lat: latitude,
       viewing_time: viewing_time,
@@ -37,7 +39,6 @@ class House {
       house_information: house_information,
       user_id: user_id
     };
-    debugger;
 
     API.post("/houses", house).then(data => {
       let newHouse = new House(
@@ -47,7 +48,8 @@ class House {
         data.lat,
         data.viewing_time,
         data.viewing_date,
-        data.house_information
+        data.house_information,
+        data.user_id
       );
 
       let coords = {
@@ -56,8 +58,6 @@ class House {
       };
 
       let content = `<h1>${newHouse.name}</h1> <p>${newHouse.viewing_date} <br> ${newHouse.viewing_time}<br> ${newHouse.house_information}</p>`;
-
-      newHouse.addMarker(coords, content);
     });
   }
 }
