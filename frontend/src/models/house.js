@@ -10,7 +10,12 @@ class House {
   ) {
     (this.id = id),
       (this.name = name),
-      (this.home_longitude = home_longitude),
-      (this.home_latitude = home_latitude);
+      (this.lng = lng),
+      (this.lat = lat),
+      (this.viewing_time = viewing_time),
+      (this.viewing_date = viewing_date),
+      (this.house_information = house_information);
   }
+
+  static addViewing() {}
 }
