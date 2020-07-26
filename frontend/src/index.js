@@ -13,7 +13,12 @@ userSelect.addEventListener("change", e => {
 userForm.addEventListener("submit", e => {
   e.preventDefault();
   User.createUser();
+  clearForm();
 });
+
+function clearForm() {
+  userForm.reset();
+}
 
 let map;
 
