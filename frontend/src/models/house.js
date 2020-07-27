@@ -58,6 +58,8 @@ class House {
       };
 
       let content = `<h1>${newHouse.name}</h1> <p>${newHouse.viewing_date} <br> ${newHouse.viewing_time}<br> ${newHouse.house_information}</p>`;
+      addMarker(coords, content);
+      clearForm();
     });
   }
 }

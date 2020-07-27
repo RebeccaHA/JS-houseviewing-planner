@@ -64,6 +64,7 @@ class User {
   }
 
   static showUserPins(user, houses) {
+    initMap();
     let userHome = {
       lat: user.home_latitude,
       lng: user.home_longitude
