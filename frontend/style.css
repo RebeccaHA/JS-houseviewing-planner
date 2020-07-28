@@ -2,23 +2,34 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #242333;
   display: flex;
   flex-direction: row;
+  background-color: #242333;
   color: #fff;
+  font-family: "lato", sans-serif;
+  margin: 0;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: "lato", sans-serif;
-  margin: 0;
+  width: 100vw;
+}
+
+#info {
+  text-align: center;
 }
 
 #map {
   height: 600px;
   width: 100%;
+}
+
+h2 {
+  text-align: center;
 }
 
 h1 {
@@ -34,4 +45,19 @@ form {
 
 p {
   color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+}
+
+.row-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-2 {
+  margin-top: 8rem;
 }

@@ -11,12 +11,11 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
+      <div class="row-1" id="info">
         <h2>House Viewing Mapper</h2>
         <form id="user-form" class="form">
           <h2>Register A User</h2>
           <div class="form-control">
-            <label for="username">Username</label>
             <input type="text" id="name" placeholder="Enter Name" />
             <input
               type="integer"
@@ -31,21 +30,17 @@
             <button id="create-user">Submit</button>
           </div>
         </form>
-      </div>
-      <div class="row">
         <div class="user-list">
           <label>Select User</label>
           <select id="user-dropdown"> </select>
         </div>
-      </div>
-      <div class="row">
         <div id="map"></div>
       </div>
-      <div class="row">
+
+      <div class="row-2">
         <form id="house-form" class="form">
           <h2>Add a viewing</h2>
           <div class="form-control">
-            <label for="house-name">Name</label>
             <input type="text" id="house-name" placeholder="Enter Name" /><br />
             <input type="integer" id="lng" placeholder="lng" /><br />
             <input type="integer" id="lat" placeholder="Add latitude" /><br />
