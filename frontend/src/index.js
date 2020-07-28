@@ -1,5 +1,6 @@
 User.getAllUsers();
 
+const houseForm = document.getElementById("house-form");
 const userForm = document.getElementById("user-form");
 const userSelect = document.getElementById("user-dropdown");
 const addHouseButton = document.getElementById("add-viewing");
@@ -23,6 +24,7 @@ addHouseButton.addEventListener("click", e => {
 
 function clearForm() {
   userForm.reset();
+  houseForm.reset();
 }
 
 let map;

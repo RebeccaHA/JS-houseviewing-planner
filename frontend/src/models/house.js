@@ -57,9 +57,9 @@ class House {
         lng: newHouse.lng
       };
 
-      let content = `<h1>${newHouse.name}</h1> <p>${newHouse.viewing_date} <br> ${newHouse.viewing_time}<br> ${newHouse.house_information}</p>`;
+      let content = `<h4>${newHouse.name}</h4> <p>${newHouse.viewing_date} <br> ${newHouse.viewing_time}<br> ${newHouse.house_information}</p>`;
       addMarker(coords, content);
-      clearForm();
     });
+    clearForm();
   }
 }
