@@ -11,10 +11,10 @@
   </head>
   <body>
     <div class="container">
-      <div class="row-1" id="info">
-        <h2>House Viewing Mapper</h2>
+      <div class="row-1">
+        <h2 id="main-title">House Viewing Mapper</h2>
         <form id="user-form" class="form">
-          <h2>Register A User</h2>
+          <h3 id="register-title">Register user</h3>
           <div class="form-control">
             <input type="text" id="name" placeholder="Enter Name" />
             <input
@@ -27,11 +27,11 @@
               id="home_latitude"
               placeholder="Add home latitude"
             />
-            <button id="create-user">Submit</button>
+            <button id="create-user">Register</button>
           </div>
         </form>
         <div class="user-list">
-          <label>Select User</label>
+          <label id="select-user">Select User</label>
           <select id="user-dropdown"> </select>
         </div>
         <div id="map"></div>
@@ -39,10 +39,10 @@
 
       <div class="row-2">
         <form id="house-form" class="form">
-          <h2>Add a viewing</h2>
+          <h3>Add a viewing</h3>
           <div class="form-control">
             <input type="text" id="house-name" placeholder="Enter Name" /><br />
-            <input type="integer" id="lng" placeholder="lng" /><br />
+            <input type="integer" id="lng" placeholder="Add longitude" /><br />
             <input type="integer" id="lat" placeholder="Add latitude" /><br />
             <input
               type="text"
@@ -57,8 +57,10 @@
 
             <br />
             <textarea
+              rows="4"
+              cols="16"
               id="house-information"
-              placeholder="Add information about the house mates, property notes and monthly rent"
+              placeholder="Add information about the property, housemates and monthly rent"
             ></textarea
             ><br />
             <button id="add-viewing">Add viewing</button>

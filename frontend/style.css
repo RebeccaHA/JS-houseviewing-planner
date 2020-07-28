@@ -19,38 +19,37 @@ body {
   width: 100vw;
 }
 
-#info {
-  text-align: center;
-}
-
-#map {
-  height: 600px;
-  width: 100%;
-}
-
 h2 {
   text-align: center;
 }
 
-h1 {
-  text-align: center;
+h4 {
   color: black;
 }
 input {
   padding: 5px 10px;
-}
-form {
-  padding: 30px 40px;
+  margin-top: 5px;
 }
 
 p {
   color: black;
 }
 
+button {
+  padding: 5px;
+  margin-top: 5px;
+  font-family: "lato", sans-serif;
+}
+
+#create-user {
+  padding: 5px;
+  margin: 2px;
+}
+
 .container {
   display: flex;
   flex-direction: row;
-  width: 40vw;
+  width: 60vw;
 }
 
 .row-1 {
@@ -58,6 +57,38 @@ p {
   flex-direction: column;
 }
 
-.row-2 {
-  margin-top: 8rem;
+.user-list {
+  margin: 10px 0px;
+}
+
+#select-user {
+  margin-right: 5px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+#register-title {
+  text-align: left;
+}
+
+#house-form {
+  padding: 150px 30px;
+}
+
+#house-information {
+  padding: 5px 12px;
+  margin-top: 5px;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: "lato", sans-serif;
+}
+
+#main-title {
+  text-align: center;
+  margin-bottom: 50px;
 }

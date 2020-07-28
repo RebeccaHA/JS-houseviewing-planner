@@ -76,7 +76,7 @@ class User {
         lat: house.lat,
         lng: house.lng
       };
-      let content = `<h1>${house.name}</h1> <p>${house.viewing_date} <br> ${house.viewing_time} <br> ${house.house_information}</p>`;
+      let content = `<h4>${house.name}</h4> <p>${house.viewing_date} <br> ${house.viewing_time} <br> ${house.house_information}</p>`;
 
       addMarker(coords, content);
     });
