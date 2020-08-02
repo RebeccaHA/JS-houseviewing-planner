@@ -75,7 +75,7 @@ button {
 }
 
 #house-form {
-  padding: 150px 30px;
+  padding: 180px 30px 15px 30px;
 }
 
 #house-information {
@@ -91,4 +91,26 @@ button {
 #main-title {
   text-align: center;
   margin-bottom: 50px;
+}
+
+.house-cards {
+  /* display: flex; */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px white;
+  border-radius: 3px;
+  background-color: white;
+  width: 15vw;
+  margin-left: 30px;
+  position: relative;
+}
+
+#viewed-title {
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+.checkbox {
+  position: absolute;
+  top: 5px;
+  left: 180px;
 }

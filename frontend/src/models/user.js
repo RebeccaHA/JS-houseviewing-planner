@@ -77,8 +77,8 @@ class User {
         lng: house.lng
       };
       let content = `<h4>${house.name}</h4> <p>${house.viewing_date} <br> ${house.viewing_time} <br> ${house.house_information}</p>`;
-
       addMarker(coords, content);
+      addCard(houses);
     });
   }
 }

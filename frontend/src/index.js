@@ -61,3 +61,13 @@ function addHome(coords) {
     icon: "src/images/home.png"
   });
 }
+
+function addCard(houses) {
+  houses.forEach(house => {
+    const houseCard = document.getElementById("cards");
+    houseCard.innerHTML += `<h4>${house.name}</h4>
+      <p>${house.viewing_date}, ${house.viewing_time}</p>
+      <p>${house.house_information}</p>
+      <input type="checkbox" name="viewed" id="${house.id}" class="checkbox" />`;
+  });
+}
