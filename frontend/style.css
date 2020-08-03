@@ -75,7 +75,7 @@ button {
 }
 
 #house-form {
-  padding: 180px 30px 15px 30px;
+  padding: 150px 30px 15px 30px;
 }
 
 #house-information {
@@ -93,15 +93,27 @@ button {
   margin-bottom: 50px;
 }
 
-.house-cards {
+.card {
   /* display: flex; */
   border-radius: 5px;
   box-shadow: 0 2px 4px white;
   border-radius: 3px;
   background-color: white;
   width: 15vw;
-  margin-left: 30px;
+  margin: 5px 5px 5px 30px;
   position: relative;
+}
+
+.card-checked {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px white;
+  border-radius: 3px;
+  background-color: white;
+  width: 15vw;
+  margin: 5px 5px 5px 30px;
+  position: relative;
+  text-decoration: line-through;
+  text-decoration-color: black;
 }
 
 #viewed-title {
@@ -109,7 +121,10 @@ button {
   margin-bottom: 5px;
 }
 
-.checkbox {
+input[type="checkbox"]:checked h4 {
+  text-decoration: line-through;
+}
+#checkbox {
   position: absolute;
   top: 5px;
   left: 180px;

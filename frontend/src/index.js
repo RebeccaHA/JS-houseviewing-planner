@@ -62,12 +62,31 @@ function addHome(coords) {
   });
 }
 
-function addCard(houses) {
-  houses.forEach(house => {
-    const houseCard = document.getElementById("cards");
-    houseCard.innerHTML += `<h4>${house.name}</h4>
-      <p>${house.viewing_date}, ${house.viewing_time}</p>
-      <p>${house.house_information}</p>
-      <input type="checkbox" name="viewed" id="${house.id}" class="checkbox" />`;
-  });
+function addCard(house) {
+  const houseCard = document.getElementById("cards");
+  const cardDiv = document.createElement("div");
+  const cardTitle = document.createElement("h4");
+  const cardContent = document.createElement("p");
+  const cardInformation = document.createElement("p");
+  const checkboxViewed = document.createElement("input");
+
+  cardDiv.classList = "card";
+  cardTitle.innerText = `${house.name}`;
+  cardContent.innerText = `${house.viewing_date}, ${house.viewing_time}`;
+  cardInformation.innerText = `${house.house_information}`;
+  checkboxViewed.setAttribute("type", "checkbox");
+  checkboxViewed.value = `${house.id}`;
+  checkboxViewed.id = "checkbox";
+
+  cardDiv.append(checkboxViewed, cardTitle, cardContent, cardInformation);
+  houseCard.appendChild(cardDiv);
+  checkboxViewed.addEventListener("change", checkedCard);
+}
+
+function checkedCard(e) {
+  if (e.target.checked) {
+    e.target.parentElement.classList = "card-checked";
+  } else {
+    e.target.parentElement.classList = "card";
+  }
 }
