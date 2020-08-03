@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_221610) do
     t.string "viewing_time"
     t.string "viewing_date"
     t.string "house_information"
+    t.boolean "viewed"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

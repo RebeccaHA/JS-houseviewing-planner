@@ -80,12 +80,13 @@ function addCard(house) {
 
   cardDiv.append(checkboxViewed, cardTitle, cardContent, cardInformation);
   houseCard.appendChild(cardDiv);
-  checkboxViewed.addEventListener("change", checkedCard);
+  checkboxViewed.addEventListener("change", checkedCard(house));
 }
 
-function checkedCard(e) {
+function checkedCard(e, house) {
   if (e.target.checked) {
     e.target.parentElement.classList = "card-checked";
+    house.viewed =
   } else {
     e.target.parentElement.classList = "card";
   }

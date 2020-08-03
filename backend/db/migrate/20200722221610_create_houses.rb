@@ -7,6 +7,7 @@ class CreateHouses < ActiveRecord::Migration[6.0]
       t.string :viewing_time
       t.string :viewing_date
       t.string :house_information
+      t.boolean :viewed
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
