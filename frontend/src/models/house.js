@@ -62,6 +62,7 @@ class House {
 
       let content = `<h4>${newHouse.name}</h4> <p>${newHouse.viewing_date} <br> ${newHouse.viewing_time}<br> ${newHouse.house_information}</p>`;
       addMarker(coords, content);
+      addCard(newHouse);
     });
     clearForm();
   }
