@@ -20,4 +20,15 @@ class API {
       body: JSON.stringify(data)
     }).then(response => response.json());
   }
+
+  static patch(url, data) {
+    return fetch(this.baseURL + url, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }).then(response => response.json());
+  }
 }

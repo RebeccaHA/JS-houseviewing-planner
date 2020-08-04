@@ -7,7 +7,8 @@ class House {
     viewing_time,
     viewing_date,
     house_information,
-    user_id
+    user_id,
+    viewed
   ) {
     (this.id = id),
       (this.name = name),
@@ -17,6 +18,7 @@ class House {
       (this.viewing_date = viewing_date),
       (this.house_information = house_information),
       (this.user_id = user_id);
+    this.viewed = viewed;
   }
 
   static addViewing() {
@@ -49,7 +51,8 @@ class House {
         data.viewing_time,
         data.viewing_date,
         data.house_information,
-        data.user_id
+        data.user_id,
+        data.viewed
       );
 
       let coords = {

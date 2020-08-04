@@ -7,6 +7,8 @@ const addHouseButton = document.getElementById("add-viewing");
 
 userSelect.addEventListener("change", e => {
   let userId = e.target.value;
+  const houseCard = document.getElementById("cards");
+  houseCard.innerHTML = "";
   User.retrieveUser(userId);
 });
 
@@ -70,24 +72,38 @@ function addCard(house) {
   const cardInformation = document.createElement("p");
   const checkboxViewed = document.createElement("input");
 
-  cardDiv.classList = "card";
+  cardDiv.id = `${house.id}`;
   cardTitle.innerText = `${house.name}`;
   cardContent.innerText = `${house.viewing_date}, ${house.viewing_time}`;
   cardInformation.innerText = `${house.house_information}`;
   checkboxViewed.setAttribute("type", "checkbox");
-  checkboxViewed.value = `${house.id}`;
+
   checkboxViewed.id = "checkbox";
 
+  if (house.viewed) {
+    cardDiv.classList = "card-checked";
+    checkboxViewed.checked = true;
+  } else {
+    cardDiv.classList = "card";
+  }
+
   cardDiv.append(checkboxViewed, cardTitle, cardContent, cardInformation);
+  // houseCard.innerHTML = "";
   houseCard.appendChild(cardDiv);
-  checkboxViewed.addEventListener("change", checkedCard(house));
+  checkboxViewed.addEventListener("change", checkedCard);
 }
 
-function checkedCard(e, house) {
+function checkedCard(e) {
   if (e.target.checked) {
     e.target.parentElement.classList = "card-checked";
-    house.viewed =
+    e.target.value = true;
   } else {
     e.target.parentElement.classList = "card";
+    e.target.value = false;
   }
+  API.patch(`/houses/${e.target.parentElement.id}`, {
+    checked: e.target.value
+  }).then(house => {
+    console.log(house);
+  });
 }
