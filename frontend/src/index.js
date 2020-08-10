@@ -1,9 +1,14 @@
 User.getAllUsers();
 
+const hlisting = document.getElementById("h-listing");
 const houseForm = document.getElementById("house-form");
 const userForm = document.getElementById("user-form");
 const userSelect = document.getElementById("user-dropdown");
 const addHouseButton = document.getElementById("add-viewing");
+
+hlisting.addEventListener("click", e => {
+  User.renderDifferentHouses();
+});
 
 userSelect.addEventListener("change", e => {
   let userId = e.target.value;
@@ -19,15 +24,14 @@ userForm.addEventListener("submit", e => {
 });
 
 addHouseButton.addEventListener("click", e => {
-  e.preventDefault();
   House.addViewing();
   clearForm();
 });
 
-function clearForm() {
+const clearForm = () => {
   userForm.reset();
   houseForm.reset();
-}
+};
 
 let map;
 
@@ -51,7 +55,7 @@ function addMarker(coords, content) {
     content: content
   });
 
-  marker.addListener("click", function() {
+  marker.addListener("click", () => {
     infoWindow.open(map, marker);
   });
 }

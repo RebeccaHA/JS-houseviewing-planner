@@ -70,7 +70,6 @@ class User {
       lng: user.home_longitude
     };
     addHome(userHome);
-
     houses.forEach(house => {
       let coords = {
         lat: house.lat,
@@ -79,6 +78,17 @@ class User {
       let content = `<h4>${house.name}</h4> <p>${house.viewing_date} <br> ${house.viewing_time} <br> ${house.house_information}</p>`;
       addMarker(coords, content);
       addCard(house);
+    });
+  }
+
+  static renderDifferentHouses() {
+    const userSelect = document.getElementById("user-dropdown").value;
+    const houseCard = document.getElementById("cards");
+    API.get(`/users/${userSelect}`).then(user => {
+      let userHouses = user.houses;
+      const filtered = userHouses.filter(house => house.name.charAt(0) === "h");
+      houseCard.innerHTML = "";
+      User.showUserPins(user, filtered);
     });
   }
 }
